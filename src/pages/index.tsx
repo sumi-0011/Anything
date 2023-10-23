@@ -1,4 +1,7 @@
 import Head from "next/head";
+import { css } from "@emotion/react";
+
+const color = "white";
 
 export default function Home() {
   return (
@@ -9,7 +12,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>main</main>
+      <main>
+        main
+        <div
+          css={css`
+            padding: 32px;
+            background-color: hotpink;
+            font-size: 24px;
+            border-radius: 4px;
+            &:hover {
+              color: ${color};
+            }
+          `}
+        >
+          Hover to change color.
+        </div>
+      </main>
     </>
   );
 }
