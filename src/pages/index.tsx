@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { css } from "@emotion/react";
+import { motion } from "framer-motion";
 
 const color = "white";
 
@@ -20,13 +21,21 @@ export default function Home() {
             background-color: hotpink;
             font-size: 24px;
             border-radius: 4px;
+            margin-bottom: 12px;
             &:hover {
               color: ${color};
             }
           `}
         >
-          Hover to change color.
+          Hover to change color. (emotion test)
         </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+        >
+          opacity animation (framer motion test)
+        </motion.div>
       </main>
     </>
   );
