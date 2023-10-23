@@ -1,6 +1,6 @@
-import Head from "next/head";
 import { css } from "@emotion/react";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 const color = "white";
 
