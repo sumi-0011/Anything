@@ -67,6 +67,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:18.2.0"],\
           ["storybook", "npm:7.5.1"],\
           ["ts-jest", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:29.1.1"],\
+          ["tsconfig-paths-webpack-plugin", "npm:4.1.0"],\
           ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
           ["webpack", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:5.89.0"]\
         ],\
@@ -9654,6 +9655,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:18.2.0"],\
           ["storybook", "npm:7.5.1"],\
           ["ts-jest", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:29.1.1"],\
+          ["tsconfig-paths-webpack-plugin", "npm:4.1.0"],\
           ["typescript", "patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
           ["webpack", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:5.89.0"]\
         ],\
