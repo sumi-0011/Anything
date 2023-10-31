@@ -44,6 +44,12 @@ const config: StorybookConfig = {
         '@emotion/core': toPath('node_modules/@emotion/react'),
       },
     },
-  }),
+  }), 
+  babel: async (options) => {
+    options.presets!.push('@emotion/babel-preset-css-prop');
+    options.presets!.push(['@babel/preset-typescript', { allowDeclareFields: true }]);
+
+    return options;
+  },
 };
 export default config;
