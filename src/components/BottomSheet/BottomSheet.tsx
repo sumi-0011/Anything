@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { type Variants, m } from "framer-motion";
 import { type ComponentProps, type MouseEventHandler } from "react";
 
@@ -11,9 +11,16 @@ import AnimatePortal from "../Portal/AnimatePortal";
 interface Props extends ComponentProps<typeof AnimatePortal> {
   // onClickOutside : scrim을 클릭했을 때 실행되는 함수이며, 기본적으로 target을 확인한 후 실행됩니다
   onClickOutside?: VoidFunction;
+  overrideCss?: SerializedStyles;
 }
 
-const BottomSheet = ({ onClickOutside, isShowing, children, mode }: Props) => {
+const BottomSheet = ({
+  onClickOutside,
+  isShowing,
+  children,
+  mode,
+  overrideCss,
+}: Props) => {
   const onClickOutsideDefault: MouseEventHandler<HTMLDivElement> = (e) => {
     if (e.target !== e.currentTarget) return;
     if (onClickOutside) onClickOutside();
@@ -29,7 +36,7 @@ const BottomSheet = ({ onClickOutside, isShowing, children, mode }: Props) => {
         animate="animate"
         exit="exit"
       >
-        <m.div css={contentCss} variants={bottomSheetVariants}>
+        <m.div css={[contentCss, overrideCss]} variants={bottomSheetVariants}>
           {children}
         </m.div>
       </m.div>

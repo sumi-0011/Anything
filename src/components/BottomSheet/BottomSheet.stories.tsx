@@ -1,9 +1,9 @@
 import { css } from "@emotion/react";
-import styled from "@emotion/styled";
 import { type Meta } from "@storybook/react";
 import { domMax, LazyMotion } from "framer-motion";
 
 import useBoolean from "@/hooks/useBoolean";
+import theme from "@/styles/theme";
 
 import BottomSheet from "./BottomSheet";
 
@@ -19,17 +19,31 @@ export function Default() {
 
   return (
     <LazyMotion features={domMax}>
-      <Button type="button" onClick={toggleShowing}>
+      <button css={buttonCss} type="button" onClick={toggleShowing}>
         toggle
-      </Button>
-      <BottomSheet onClickOutside={toggleShowing} isShowing={isShowing}>
-        bottom sheet content asd
+      </button>
+      <BottomSheet
+        onClickOutside={toggleShowing}
+        isShowing={isShowing}
+        overrideCss={bottomSheetCss}
+      >
+        <button css={buttonCss} onClick={toggleShowing}>
+          Close Button
+        </button>
       </BottomSheet>
     </LazyMotion>
   );
 }
 
-const Button = styled.button`
-  background-color: red;
+const bottomSheetCss = css`
+  padding: 20px;
+`;
+
+const buttonCss = css`
+  background-color: ${theme.colors.serenity};
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
   color: white;
+  cursor: pointer;
 `;
