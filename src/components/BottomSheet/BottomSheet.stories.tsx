@@ -3,7 +3,7 @@ import { type Meta } from "@storybook/react";
 import { domMax, LazyMotion } from "framer-motion";
 
 import useBoolean from "@/hooks/useBoolean";
-import theme from "@/styles/theme";
+import { lightTheme } from "@/styles/theme";
 
 import BottomSheet from "./BottomSheet";
 
@@ -40,7 +40,7 @@ const bottomSheetCss = css`
 `;
 
 const buttonCss = css`
-  background-color: ${theme.colors.serenity};
+  background-color: ${lightTheme.colors.black};
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
