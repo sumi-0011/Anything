@@ -1,10 +1,9 @@
-import { css, SerializedStyles } from "@emotion/react";
+import { css, SerializedStyles, Theme } from "@emotion/react";
 import { type Variants, m } from "framer-motion";
 import { type ComponentProps, type MouseEventHandler } from "react";
 
 import { defaultEasing, defaultFadeInVariants } from "@/constants/motions";
 import { mobileScrimCss } from "@/styles/scrim";
-import theme from "@/styles/theme";
 
 import AnimatePortal from "../Portal/AnimatePortal";
 
@@ -46,7 +45,7 @@ const BottomSheet = ({
 
 export default BottomSheet;
 
-const contentCss = css`
+const contentCss = (theme: Theme) => css`
   position: absolute;
   z-index: ${theme.zIndex.modal};
   top: 100%;
