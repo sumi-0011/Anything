@@ -59,6 +59,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.0.3",
     "storybook": "^7.5.1",
+    "storybook-dark-mode": "^3.0.1",
     "ts-jest": "^29.1.1",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5",
