@@ -11,7 +11,7 @@ export const scrimCss = (theme: Theme) => css`
   width: 100vw;
   height: 100%;
 
-  background-color: rgb(0 0 0 / 70%);
+  background-color: rgb(0 0 0 / 50%);
 `;
 
 export const mobileScrimCss = (theme: Theme) => css`

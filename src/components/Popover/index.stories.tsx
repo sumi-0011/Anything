@@ -19,3 +19,15 @@ export function Default() {
     </Popover>
   );
 }
+
+export function Overlay() {
+  return (
+    <Popover>
+      <Popover.Button>Popover</Popover.Button>
+      <Popover.Overlay />
+      <Popover.Panel>
+        <div>Popover Panel</div>
+      </Popover.Panel>
+    </Popover>
+  );
+}
