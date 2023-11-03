@@ -1,16 +1,21 @@
-import { css } from "@emotion/react";
+import { css, SerializedStyles, Theme } from "@emotion/react";
 import { AnimatePresence, m, Variants } from "framer-motion";
-import { ComponentProps } from "react";
+import { PropsWithChildren } from "react";
 
 import { usePopoverValue } from "@/components/Popover/Provider";
 import { defaultEasing } from "@/constants/motions";
 
-interface Props extends ComponentProps<"div"> {}
+interface Props {
+  overrideCss?: SerializedStyles;
+}
 
-export default function PopoverPanel({ children, ...props }: Props) {
+export default function PopoverPanel({
+  children,
+  overrideCss,
+}: PropsWithChildren<Props>) {
   const { isOpen } = usePopoverValue();
   return (
-    <div css={containerCss}>
+    <div>
       <AnimatePresence>
         {isOpen && (
           <m.div
@@ -18,8 +23,9 @@ export default function PopoverPanel({ children, ...props }: Props) {
             initial="initial"
             animate="animate"
             exit="exit"
+            css={[containerCss, overrideCss]}
           >
-            <div {...props}>{children}</div>
+            {children}
           </m.div>
         )}
       </AnimatePresence>
@@ -27,11 +33,16 @@ export default function PopoverPanel({ children, ...props }: Props) {
   );
 }
 
-const containerCss = () => css`
+const containerCss = (theme: Theme) => css`
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
   width: 100%;
+
+  z-index: ${theme.zIndex.modal};
+
+  color: ${theme.colors.text.default};
+  background-color: ${theme.colors.bg.default};
 `;
 
 const variants: Variants = {
