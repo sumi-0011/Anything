@@ -57,13 +57,12 @@ const contentCss = (theme: Theme) => css`
 
   width: 100%;
 
-  /* TODO: 디자인에 따라 변경 필요 */
   min-height: 300px;
   max-height: 99%;
   padding-top: 6px;
 
   color: #fff;
-  background-color: #454545;
+  background-color: ${theme.colors.bg.default};
   border-radius: 16px 16px 0 0;
 `;
 
