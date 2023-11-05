@@ -1,8 +1,6 @@
-import { css } from "@emotion/react";
+import { css, Theme } from "@emotion/react";
 
-import theme from "@/styles/theme";
-
-export const scrimCss = css`
+export const scrimCss = (theme: Theme) => css`
   position: fixed;
   z-index: ${theme.zIndex.backdrop};
   top: 0;
@@ -12,10 +10,12 @@ export const scrimCss = css`
 
   width: 100vw;
   height: 100%;
+
+  background-color: rgb(0 0 0 / 70%);
 `;
 
-export const mobileScrimCss = css`
-  ${scrimCss}
+export const mobileScrimCss = (theme: Theme) => css`
+  ${scrimCss(theme)}
 
   right: 0;
   left: 0;
