@@ -1,6 +1,7 @@
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Meta } from "@storybook/react";
+import { color } from "framer-motion";
 
 import getOppositeTextColor from "@/utils/colors";
 
@@ -13,11 +14,21 @@ export default meta;
 export function Default() {
   const theme = useTheme();
 
-  if (!theme) return <></>;
-
   return (
     <>
-      <ColorPalette colors={theme.colors.neutral} type="netural" />
+      <ColorPalette
+        colors={{
+          white: theme.colors.white,
+          black: theme.colors.black,
+        }}
+        type="base"
+      />
+      <ColorPalette colors={theme.colors.bg} type="bg" />
+      <ColorPalette colors={theme.colors.neutral} type="neutral" />
+      <ColorPalette colors={theme.colors.success} type="success" />
+      <ColorPalette colors={theme.colors.alert} type="alert" />
+      <ColorPalette colors={theme.colors.error} type="error" />
+      <ColorPalette colors={theme.colors.teal} type="teal" />
     </>
   );
 }
@@ -29,16 +40,13 @@ function ColorPalette({
   colors: Record<string, string>;
   type: string;
 }) {
-  const colorList = Object.entries(colors).sort((a, b) =>
-    a[1] > b[1] ? -1 : 1,
-  );
-
+  const colorList = Object.entries(colors);
   return (
     <ColorPaletteContainer>
       <h2>{type}</h2>
       <ul>
         {colorList.map(([name, color]) => (
-          <ColorPaletteItem color={color} key={color}>
+          <ColorPaletteItem color={color} key={type + name}>
             <p>{isNaN(name as unknown as number) ? name : `${type} ${name}`}</p>
             <span>{color}</span>
           </ColorPaletteItem>
@@ -77,6 +85,7 @@ const ColorPaletteItem = styled.li<{
 `;
 
 const ColorPaletteContainer = styled.section`
+  margin-top: 36px;
   > ul {
     display: flex;
     flex-wrap: wrap;
@@ -88,6 +97,5 @@ const ColorPaletteContainer = styled.section`
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 14px;
-    margin-top: 24px;
   }
 `;
