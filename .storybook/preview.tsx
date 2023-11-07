@@ -1,9 +1,10 @@
-import { ThemeProvider } from "@emotion/react";
+import {   Global, ThemeProvider } from "@emotion/react";
 import type { Preview } from "@storybook/react";
 import React from "react";
 import { useDarkMode } from "storybook-dark-mode";
 
 import { darkTheme, lightTheme } from "../src/styles/theme";
+import globalStyles from "../src/styles/globalStyles";
 
 const decorators = [
   (Story) => {
@@ -14,6 +15,7 @@ const decorators = [
     );
     return (
       <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <Global styles={globalStyles} />
         <Story />
       </ThemeProvider>
     );
