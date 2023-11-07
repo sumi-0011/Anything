@@ -3,7 +3,6 @@ const colors = {
   black: "#0C0D0D",
 
   neutral: {
-    white: "#FFFFFF",
     25: "#FDFDFD",
     50: "#FAFAFA",
     100: "#F5F5F5",
@@ -16,7 +15,6 @@ const colors = {
     800: "#262626",
     900: "#171717",
     950: "#0A0A0A",
-    black: "#000000",
   },
   success: {
     50: "#EBFAF3",
