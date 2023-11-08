@@ -1,6 +1,4 @@
-import { css } from "@emotion/react";
 import { type Meta } from "@storybook/react";
-import { domMax, LazyMotion } from "framer-motion";
 
 import Popover from "./index";
 
@@ -13,13 +11,11 @@ export default meta;
 
 export function Default() {
   return (
-    <LazyMotion features={domMax}>
-      <Popover>
-        <Popover.Button>Popover</Popover.Button>
-        <Popover.Panel>
-          <div>Popover Panel</div>
-        </Popover.Panel>
-      </Popover>
-    </LazyMotion>
+    <Popover>
+      <Popover.Button>Popover</Popover.Button>
+      <Popover.Panel>
+        <div>Popover Panel</div>
+      </Popover.Panel>
+    </Popover>
   );
 }
