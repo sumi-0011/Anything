@@ -1,6 +1,5 @@
 import { css } from "@emotion/react";
 import { type Meta } from "@storybook/react";
-import { domMax, LazyMotion } from "framer-motion";
 
 import useBoolean from "@/hooks/useBoolean";
 import { lightTheme } from "@/styles/theme";
@@ -18,7 +17,7 @@ export function Default() {
   const [isShowing, toggleShowing] = useBoolean(false);
 
   return (
-    <LazyMotion features={domMax}>
+    <>
       <button css={buttonCss} type="button" onClick={toggleShowing}>
         toggle
       </button>
@@ -32,7 +31,7 @@ export function Default() {
           desc="Bottom Sheet Description"
         />
       </BottomSheet>
-    </LazyMotion>
+    </>
   );
 }
 
