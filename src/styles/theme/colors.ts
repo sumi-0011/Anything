@@ -71,9 +71,21 @@ const darkThemeBg = {
 export const lightThemeColors = {
   ...colors,
   bg: lightThemeBg,
+  text: {
+    default: colors.black,
+    subtitle: colors.neutral[500],
+    muted: colors.neutral[600],
+    disabled: colors.neutral[700],
+  },
 };
 
 export const darkThemeColors = {
   ...colors,
   bg: darkThemeBg,
+  text: {
+    default: colors.white,
+    subtitle: colors.neutral[500],
+    muted: colors.neutral[600],
+    disabled: colors.neutral[700],
+  },
 };

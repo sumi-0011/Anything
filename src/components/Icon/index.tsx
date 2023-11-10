@@ -1,20 +1,20 @@
+import { useTheme } from "@emotion/react";
+
 import CloseIcon from "@/components/Icon/Close";
-import useGetDarkMode from "@/hooks/useGetDarkMode";
-import { darkTheme, lightTheme } from "@/styles/theme";
+import { darkTheme } from "@/styles/theme";
 
 type IconType = "close";
 
 export interface IconPropsType extends React.ComponentProps<"svg"> {
-  theme: typeof darkTheme | typeof lightTheme;
+  theme: typeof darkTheme;
 }
 
-interface Props {
+interface Props extends React.ComponentProps<"svg"> {
   type: IconType;
 }
 
 function Icon({ type, ...props }: Props) {
-  const isDarkMode = useGetDarkMode();
-  const theme = isDarkMode ? darkTheme : lightTheme;
+  const theme = useTheme();
 
   switch (type) {
     case "close":

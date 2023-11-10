@@ -27,17 +27,16 @@ export function Default() {
         isShowing={isShowing}
         overrideCss={bottomSheetCss}
       >
-        <button css={buttonCss} onClick={toggleShowing}>
-          Close Button
-        </button>
+        <BottomSheet.Header
+          title="Bottom Sheet"
+          desc="Bottom Sheet Description"
+        />
       </BottomSheet>
     </LazyMotion>
   );
 }
 
-const bottomSheetCss = css`
-  padding: 20px;
-`;
+const bottomSheetCss = css``;
 
 const buttonCss = css`
   background-color: ${lightTheme.colors.black};
