@@ -15,6 +15,7 @@ interface Values {
 interface Actions {
   onClose: () => void;
   onOpen: () => void;
+  toggleOpen: () => void;
 }
 
 const PopoverValuesContext = createContext<Values | undefined>(undefined);
@@ -36,6 +37,7 @@ export default function PopoverProvider({
     () => ({
       onClose: () => setIsOpen(false),
       onOpen: () => setIsOpen(true),
+      toggleOpen: () => setIsOpen((prev) => !prev),
     }),
     [],
   );
