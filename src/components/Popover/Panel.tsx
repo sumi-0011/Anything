@@ -33,16 +33,21 @@ export default function PopoverPanel({
   );
 }
 
-const containerCss = (theme: Theme) => css`
+const positionCss = (theme: Theme) => css`
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
   width: 100%;
-
   z-index: ${theme.zIndex.modal};
+`;
+
+const containerCss = (theme: Theme) => css`
+  ${positionCss(theme)}
 
   color: ${theme.colors.text.default};
   background-color: ${theme.colors.bg.default};
+  padding: 12px;
+  width: fit-content;
 `;
 
 const variants: Variants = {
