@@ -5,6 +5,7 @@ import { useDarkMode } from "storybook-dark-mode";
 
 import { darkTheme, lightTheme } from "../src/styles/theme";
 import globalStyles from "../src/styles/globalStyles";
+import { LazyMotion, domMax } from "framer-motion";
 
 const decorators = [
   (Story) => {
@@ -14,10 +15,12 @@ const decorators = [
       isDark ? "dark" : "light",
     );
     return (
-      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-        <Global styles={globalStyles} />
-        <Story />
-      </ThemeProvider>
+      <LazyMotion features={domMax}>
+        <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+            <Global styles={globalStyles} />
+            <Story />
+          </ThemeProvider>
+      </LazyMotion>
     );
   },
 ];
