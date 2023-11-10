@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import { type Meta } from "@storybook/react";
 import { domMax, LazyMotion } from "framer-motion";
 
