@@ -5,9 +5,9 @@ import { usePopoverActions } from "@/components/Popover/Provider";
 interface Props extends Omit<ComponentProps<"button">, "onClick"> {}
 
 function PopoverButton({ children, ...props }: Props) {
-  const { onOpen } = usePopoverActions();
+  const { toggleOpen } = usePopoverActions();
   return (
-    <button {...props} onClick={onOpen}>
+    <button {...props} onClick={toggleOpen}>
       {children}
     </button>
   );
