@@ -15,6 +15,7 @@ const globalStyles = css`
   body {
     max-width: 100vw;
     overflow-x: hidden;
+    min-height: 100vh;
   }
 
   a {
