@@ -1,7 +1,6 @@
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Meta } from "@storybook/react";
-import { color } from "framer-motion";
 
 import getOppositeTextColor from "@/utils/colors";
 
