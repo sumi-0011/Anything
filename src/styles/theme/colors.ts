@@ -68,9 +68,12 @@ const darkThemeBg = {
   disabled: colors.neutral[200],
 };
 
+const primaryColor = { ...colors.teal, default: colors.teal[300] };
+
 export const lightThemeColors = {
   ...colors,
   bg: lightThemeBg,
+  primary: primaryColor,
   text: {
     default: colors.black,
     subtitle: colors.neutral[500],
@@ -82,6 +85,7 @@ export const lightThemeColors = {
 export const darkThemeColors = {
   ...colors,
   bg: darkThemeBg,
+  primary: primaryColor,
   text: {
     default: colors.white,
     subtitle: colors.neutral[500],
