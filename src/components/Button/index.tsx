@@ -53,13 +53,30 @@ const variantCss = (theme: Theme, variant: ButtonVariant) => {
   switch (variant) {
     case "solid":
       return css`
-        background-color: ${theme.colors.bg.default};
-        border: 1px solid ${theme.colors.bg.default};
-        color: ${theme.colors.text.default};
+        background-color: ${theme.colors.primary.default};
+        border: 1px solid ${theme.colors.primary.default};
+        color: white;
       `;
-
+    case "outline":
+      return css`
+        background-color: transparent;
+        border: 1px solid ${theme.colors.primary.default};
+        color: ${theme.colors.primary.default};
+      `;
+    case "ghost":
+      return css`
+        background-color: transparent;
+        border: none;
+        color: ${theme.colors.primary.default};
+      `;
+    case "link":
+      return css`
+        background-color: transparent;
+        border: none;
+        color: ${theme.colors.primary.default};
+      `;
     default:
-      break;
+      return css``;
   }
 };
 
