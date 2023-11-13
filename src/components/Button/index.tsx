@@ -20,6 +20,13 @@ const buttonCss = (theme: Theme, props: StyleProps) => css`
   ${sizeCss[props.size || "md"]};
   ${variantCss(theme, props.variant || "solid")};
   border-radius: ${props.br || "4px"};
+
+  &:disabled {
+    background-color: ${theme.colors.bg.disabled};
+    border: 1px solid ${theme.colors.bg.disabled};
+    color: ${theme.colors.text.disabled};
+    cursor: not-allowed;
+  }
 `;
 
 const sizeCss = {
