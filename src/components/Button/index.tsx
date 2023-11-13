@@ -72,11 +72,9 @@ const variantCss = (theme: Theme, variant: ButtonVariant) => {
         border: 1px solid ${theme.colors.primary.default};
         color: ${theme.colors.primary.default};
 
-        &:hover {
-          background-color: ${theme.colors.neutral[50]};
-        }
+        &:hover,
         &:active {
-          background-color: ${theme.colors.neutral[100]};
+          background-color: ${theme.colors.bg.light};
         }
       `;
     case "ghost":
@@ -86,11 +84,9 @@ const variantCss = (theme: Theme, variant: ButtonVariant) => {
         color: ${theme.colors.primary.default};
         font-weight: 500;
 
-        &:hover {
-          background-color: ${theme.colors.neutral[50]};
-        }
+        &:hover,
         &:active {
-          background-color: ${theme.colors.neutral[100]};
+          background-color: ${theme.colors.bg.light};
         }
       `;
     case "link":
@@ -99,11 +95,9 @@ const variantCss = (theme: Theme, variant: ButtonVariant) => {
         border: none;
         color: ${theme.colors.primary.default};
 
-        &:hover {
-          background-color: ${theme.colors.neutral[50]};
-        }
+        &:hover,
         &:active {
-          background-color: ${theme.colors.neutral[100]};
+          background-color: ${theme.colors.bg.light};
         }
       `;
     default:
