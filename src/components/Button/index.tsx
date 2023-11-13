@@ -13,7 +13,7 @@ interface StyleProps {
 interface Props extends ComponentProps<"button">, StyleProps {}
 
 function Button(props: Props) {
-  return <button css={(theme) => buttonCss(theme, props)}>Button</button>;
+  return <button css={(theme) => buttonCss(theme, props)} {...props} />;
 }
 
 const buttonCss = (theme: Theme, props: StyleProps) => css`

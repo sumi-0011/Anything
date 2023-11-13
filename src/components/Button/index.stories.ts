@@ -10,9 +10,12 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  // argTypes: {
-  //   backgroundColor: { control: "color" },
-  // },
+  args: {
+    children: "Button",
+  },
+  argTypes: {
+    children: { control: "text", description: "Button text", name: "text" },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -23,6 +26,11 @@ export const Solid: Story = {
   args: {
     variant: "solid",
     size: "md",
+  },
+  argTypes: {
+    variant: {
+      disabled: true,
+    },
   },
 };
 
@@ -37,6 +45,11 @@ export const Ghost: Story = {
   args: {
     variant: "ghost",
     size: "md",
+  },
+  argTypes: {
+    variant: {
+      disabled: true,
+    },
   },
 };
 
