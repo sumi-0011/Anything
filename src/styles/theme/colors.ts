@@ -58,7 +58,7 @@ const lightThemeBg = {
   subtitle: colors.neutral[100],
   muted: colors.neutral[200],
   disabled: colors.neutral[200],
-  light: colors.neutral[50],
+  light: colors.neutral[100],
 };
 
 const darkThemeBg = {
