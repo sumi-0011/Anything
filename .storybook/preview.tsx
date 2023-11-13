@@ -9,11 +9,7 @@ import { LazyMotion, domMax } from "framer-motion";
 
 const decorators = [
   (Story) => {
-    const isDark = useDarkMode();
-    document.documentElement.setAttribute(
-      "color-theme",
-      isDark ? "dark" : "light",
-    );
+    const isDark = useDarkMode(); 
     return (
       <LazyMotion features={domMax}>
         <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
@@ -24,7 +20,7 @@ const decorators = [
     );
   },
 ];
-
+ 
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
