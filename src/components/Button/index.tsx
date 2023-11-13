@@ -56,24 +56,55 @@ const variantCss = (theme: Theme, variant: ButtonVariant) => {
         background-color: ${theme.colors.primary.default};
         border: 1px solid ${theme.colors.primary.default};
         color: white;
+
+        &:hover {
+          background-color: ${theme.colors.primary[400]};
+          border: 1px solid ${theme.colors.primary[400]};
+        }
+        &:active {
+          background-color: ${theme.colors.primary[500]};
+          border: 1px solid ${theme.colors.primary[500]};
+        }
       `;
     case "outline":
       return css`
         background-color: transparent;
         border: 1px solid ${theme.colors.primary.default};
         color: ${theme.colors.primary.default};
+
+        &:hover {
+          background-color: ${theme.colors.neutral[50]};
+        }
+        &:active {
+          background-color: ${theme.colors.neutral[100]};
+        }
       `;
     case "ghost":
       return css`
         background-color: transparent;
         border: none;
         color: ${theme.colors.primary.default};
+        font-weight: 500;
+
+        &:hover {
+          background-color: ${theme.colors.neutral[50]};
+        }
+        &:active {
+          background-color: ${theme.colors.neutral[100]};
+        }
       `;
     case "link":
       return css`
         background-color: transparent;
         border: none;
         color: ${theme.colors.primary.default};
+
+        &:hover {
+          background-color: ${theme.colors.neutral[50]};
+        }
+        &:active {
+          background-color: ${theme.colors.neutral[100]};
+        }
       `;
     default:
       return css``;
