@@ -1,5 +1,6 @@
-import { css, Theme } from "@emotion/react";
-import { type Meta } from "@storybook/react";
+import { type Meta, StoryObj } from "@storybook/react";
+
+import Button from "@/components/Button";
 
 import Popover from "./index";
 
@@ -10,39 +11,71 @@ const meta: Meta<typeof Popover> = {
 
 export default meta;
 
-export function Default() {
+type Story = StoryObj<typeof meta>;
+
+function DefaultComponent({ list }: { list: string[] }) {
   return (
     <Popover>
-      <Popover.Button>Popover</Popover.Button>
+      <Popover.Button>
+        <Button>Popover</Button>
+      </Popover.Button>
       <Popover.Panel>
-        <div css={liCss}>Item 1</div>
-        <div css={liCss}>Item 2</div>
-        <div css={liCss}>Item 3</div>
-        <div css={liCss}>Item 4</div>
+        <div
+          css={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+          }}
+        >
+          {list.map((item) => (
+            <Button key={item}>{item}</Button>
+          ))}
+        </div>
       </Popover.Panel>
     </Popover>
   );
 }
 
-const liCss = (theme: Theme) => css`
-  font-size: 12px;
-  padding: 4px 8px;
-  background-color: ${theme.colors.text.default};
-  color: ${theme.colors.bg.default};
+export const Default = {
+  title: "component/Popover",
+  render: ({ list }: { list: string[] }) => <DefaultComponent list={list} />,
+  args: {
+    list: ["Item 1", "Item 2", "Item 3", "Item 4"],
+  },
+  argTypes: {
+    list: {
+      control: {
+        type: "array",
+      },
+    },
+  },
+};
 
-  & + & {
-    margin-top: 8px;
-  }
-`;
-
-export function Overlay() {
+function OverlayComponent() {
   return (
     <Popover>
-      <Popover.Button>Popover</Popover.Button>
       <Popover.Overlay />
+      <Popover.Button>
+        <Button>Popover</Button>
+      </Popover.Button>
       <Popover.Panel>
-        <div>Popover Panel</div>
+        <div
+          css={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+          }}
+        >
+          {[1, 2, 3, 4].map((item) => (
+            <Button key={item}>Item {item}</Button>
+          ))}
+        </div>
       </Popover.Panel>
     </Popover>
   );
 }
+
+export const Overlay: Story = {
+  render: OverlayComponent,
+  args: {},
+};

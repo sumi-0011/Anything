@@ -15,6 +15,7 @@ function PopoverRoot({ children }: PropsWithChildren<Props>) {
 
 const wrapperCss = () => css`
   position: relative;
+  width: fit-content;
 `;
 
 export default PopoverRoot;
