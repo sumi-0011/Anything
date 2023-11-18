@@ -4,7 +4,7 @@ import { usePopoverActions } from "@/components/Popover/Provider";
 
 interface Props extends Omit<ComponentProps<"button">, "onClick"> {}
 
-function PopoverButton({ children, ...props }: Props) {
+function PopoverTrigger({ children, ...props }: Props) {
   const { toggleOpen } = usePopoverActions();
   return (
     <button {...props} onClick={toggleOpen}>
@@ -13,4 +13,4 @@ function PopoverButton({ children, ...props }: Props) {
   );
 }
 
-export default PopoverButton;
+export default PopoverTrigger;

@@ -1,10 +1,10 @@
-import PopoverButton from "./Button";
 import PopoverOverlay from "./Overlay";
 import PopoverPanel from "./Panel";
 import PopoverRoot from "./Root";
+import PopoverTrigger from "./Trigger";
 
 export default Object.assign(PopoverRoot, {
-  Button: PopoverButton,
+  Trigger: PopoverTrigger,
   Overlay: PopoverOverlay,
   Panel: PopoverPanel,
 });

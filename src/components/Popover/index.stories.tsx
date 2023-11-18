@@ -7,6 +7,7 @@ import Popover from "./index";
 const meta: Meta<typeof Popover> = {
   title: "component/Popover",
   component: Popover,
+  tags: ["autodocs"],
 };
 
 export default meta;
@@ -16,9 +17,9 @@ type Story = StoryObj<typeof meta>;
 function DefaultComponent({ list }: { list: string[] }) {
   return (
     <Popover>
-      <Popover.Button>
+      <Popover.Trigger>
         <Button>Popover</Button>
-      </Popover.Button>
+      </Popover.Trigger>
       <Popover.Panel>
         <div
           css={{
@@ -55,9 +56,9 @@ function OverlayComponent() {
   return (
     <Popover>
       <Popover.Overlay />
-      <Popover.Button>
+      <Popover.Trigger>
         <Button>Popover</Button>
-      </Popover.Button>
+      </Popover.Trigger>
       <Popover.Panel>
         <div
           css={{
