@@ -58,6 +58,7 @@ const lightThemeBg = {
   subtitle: colors.neutral[100],
   muted: colors.neutral[200],
   disabled: colors.neutral[200],
+  light: colors.neutral[100],
 };
 
 const darkThemeBg = {
@@ -66,11 +67,15 @@ const darkThemeBg = {
   subtitle: colors.neutral[100],
   muted: colors.neutral[200],
   disabled: colors.neutral[200],
+  light: colors.neutral[700],
 };
+
+const primaryColor = { ...colors.teal, default: colors.teal[300] };
 
 export const lightThemeColors = {
   ...colors,
   bg: lightThemeBg,
+  primary: primaryColor,
   text: {
     default: colors.black,
     subtitle: colors.neutral[500],
@@ -82,6 +87,7 @@ export const lightThemeColors = {
 export const darkThemeColors = {
   ...colors,
   bg: darkThemeBg,
+  primary: primaryColor,
   text: {
     default: colors.white,
     subtitle: colors.neutral[500],

@@ -46,8 +46,7 @@ const containerCss = (theme: Theme) => css`
 
   color: ${theme.colors.text.default};
   background-color: ${theme.colors.bg.default};
-  padding: 12px;
-  width: fit-content;
+  width: 100%;
 `;
 
 const variants: Variants = {
