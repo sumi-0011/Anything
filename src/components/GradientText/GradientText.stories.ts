@@ -24,12 +24,24 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    direction: "right top",
+    direction: "to right top",
     css: css`
       font-size: 60px;
       font-weight: 800;
     `,
     colors: ["#861657", "#ffa69e"],
     children: "Hello World",
+  },
+};
+
+export const TenMM: Story = {
+  args: {
+    direction: "108deg",
+    colors: ["#FF8C8C -1.04%", "#5D8AFF 101.48%"],
+    children: "10:00",
+    css: css`
+      font-size: 60px;
+      font-weight: 800;
+    `,
   },
 };
