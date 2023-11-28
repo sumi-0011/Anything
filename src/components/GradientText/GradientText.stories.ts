@@ -44,5 +44,6 @@ export const TenMM: Story = {
       font-size: 60px;
       font-weight: 800;
     `,
+    isAnimation: true,
   },
 };
