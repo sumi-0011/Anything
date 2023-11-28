@@ -14,6 +14,7 @@ const meta = {
   argTypes: {
     css: {
       disabled: true,
+      control: { disable: true },
     },
   },
 } satisfies Meta<typeof GradientText>;
