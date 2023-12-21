@@ -6,6 +6,7 @@ import globalStyles from "@/styles/globalStyles";
 import { darkTheme, lightTheme } from "@/styles/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isDark, setIsDark] = useState(false);
 
   return (

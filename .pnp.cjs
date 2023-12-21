@@ -47,6 +47,8 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.8.9"],\
           ["@types/react", "npm:18.2.33"],\
           ["@types/react-dom", "npm:18.2.14"],\
+          ["@types/react-slick", "npm:0.23.13"],\
+          ["@types/slick-carousel", "npm:1.6.40"],\
           ["@typescript-eslint/eslint-plugin", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:6.9.0"],\
           ["@typescript-eslint/parser", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:6.9.0"],\
           ["@typescript-eslint/typescript-estree", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:6.9.0"],\
@@ -69,6 +71,8 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.0.3"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:18.2.0"],\
+          ["react-slick", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:0.29.0"],\
+          ["slick-carousel", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:1.8.1"],\
           ["storybook", "npm:7.5.1"],\
           ["storybook-dark-mode", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:3.0.1"],\
           ["ts-jest", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:29.1.1"],\
@@ -7427,6 +7431,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/jquery", [\
+      ["npm:3.5.29", {\
+        "packageLocation": "../../../.yarn/berry/cache/@types-jquery-npm-3.5.29-4029cf7fc3-10c0.zip/node_modules/@types/jquery/",\
+        "packageDependencies": [\
+          ["@types/jquery", "npm:3.5.29"],\
+          ["@types/sizzle", "npm:2.3.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/jsdom", [\
       ["npm:20.0.1", {\
         "packageLocation": "../../../.yarn/berry/cache/@types-jsdom-npm-20.0.1-5bb899e006-10c0.zip/node_modules/@types/jsdom/",\
@@ -7605,6 +7619,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/react-slick", [\
+      ["npm:0.23.13", {\
+        "packageLocation": "../../../.yarn/berry/cache/@types-react-slick-npm-0.23.13-ad62d6348a-10c0.zip/node_modules/@types/react-slick/",\
+        "packageDependencies": [\
+          ["@types/react-slick", "npm:0.23.13"],\
+          ["@types/react", "npm:18.2.33"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/scheduler", [\
       ["npm:0.16.5", {\
         "packageLocation": "../../../.yarn/berry/cache/@types-scheduler-npm-0.16.5-59f95de675-10c0.zip/node_modules/@types/scheduler/",\
@@ -7642,6 +7666,25 @@ const RAW_RUNTIME_STATE =
           ["@types/http-errors", "npm:2.0.3"],\
           ["@types/mime", "npm:3.0.3"],\
           ["@types/node", "npm:20.8.9"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/sizzle", [\
+      ["npm:2.3.8", {\
+        "packageLocation": "../../../.yarn/berry/cache/@types-sizzle-npm-2.3.8-b4e813dde8-10c0.zip/node_modules/@types/sizzle/",\
+        "packageDependencies": [\
+          ["@types/sizzle", "npm:2.3.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/slick-carousel", [\
+      ["npm:1.6.40", {\
+        "packageLocation": "../../../.yarn/berry/cache/@types-slick-carousel-npm-1.6.40-b2e7e9c1a1-10c0.zip/node_modules/@types/slick-carousel/",\
+        "packageDependencies": [\
+          ["@types/slick-carousel", "npm:1.6.40"],\
+          ["@types/jquery", "npm:3.5.29"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -9840,6 +9883,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["classnames", [\
+      ["npm:2.3.2", {\
+        "packageLocation": "../../../.yarn/berry/cache/classnames-npm-2.3.2-d2fdae468d-10c0.zip/node_modules/classnames/",\
+        "packageDependencies": [\
+          ["classnames", "npm:2.3.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["clean-css", [\
       ["npm:5.3.2", {\
         "packageLocation": "../../../.yarn/berry/cache/clean-css-npm-5.3.2-8946cefff9-10c0.zip/node_modules/clean-css/",\
@@ -10088,6 +10140,8 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:20.8.9"],\
           ["@types/react", "npm:18.2.33"],\
           ["@types/react-dom", "npm:18.2.14"],\
+          ["@types/react-slick", "npm:0.23.13"],\
+          ["@types/slick-carousel", "npm:1.6.40"],\
           ["@typescript-eslint/eslint-plugin", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:6.9.0"],\
           ["@typescript-eslint/parser", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:6.9.0"],\
           ["@typescript-eslint/typescript-estree", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:6.9.0"],\
@@ -10110,6 +10164,8 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.0.3"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:18.2.0"],\
+          ["react-slick", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:0.29.0"],\
+          ["slick-carousel", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:1.8.1"],\
           ["storybook", "npm:7.5.1"],\
           ["storybook-dark-mode", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:3.0.1"],\
           ["ts-jest", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:29.1.1"],\
@@ -11197,6 +11253,15 @@ const RAW_RUNTIME_STATE =
           ["enhanced-resolve", "npm:5.15.0"],\
           ["graceful-fs", "npm:4.2.11"],\
           ["tapable", "npm:2.2.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["enquire.js", [\
+      ["npm:2.1.6", {\
+        "packageLocation": "../../../.yarn/berry/cache/enquire.js-npm-2.1.6-fc4ea2e583-10c0.zip/node_modules/enquire.js/",\
+        "packageDependencies": [\
+          ["enquire.js", "npm:2.1.6"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -14953,6 +15018,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["json2mq", [\
+      ["npm:0.2.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/json2mq-npm-0.2.0-aa8a6516b9-10c0.zip/node_modules/json2mq/",\
+        "packageDependencies": [\
+          ["json2mq", "npm:0.2.0"],\
+          ["string-convert", "npm:0.2.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["json5", [\
       ["npm:1.0.2", {\
         "packageLocation": "../../../.yarn/berry/cache/json5-npm-1.0.2-9607f93e30-10c0.zip/node_modules/json5/",\
@@ -17473,6 +17548,37 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-slick", [\
+      ["npm:0.29.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/react-slick-npm-0.29.0-28db290b04-10c0.zip/node_modules/react-slick/",\
+        "packageDependencies": [\
+          ["react-slick", "npm:0.29.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:0.29.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-slick-virtual-f36e21fb47/4/.yarn/berry/cache/react-slick-npm-0.29.0-28db290b04-10c0.zip/node_modules/react-slick/",\
+        "packageDependencies": [\
+          ["react-slick", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:0.29.0"],\
+          ["@types/react", "npm:18.2.33"],\
+          ["@types/react-dom", "npm:18.2.14"],\
+          ["classnames", "npm:2.3.2"],\
+          ["enquire.js", "npm:2.1.6"],\
+          ["json2mq", "npm:0.2.0"],\
+          ["lodash.debounce", "npm:4.0.8"],\
+          ["react", "npm:18.2.0"],\
+          ["react-dom", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:18.2.0"],\
+          ["resize-observer-polyfill", "npm:1.5.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["react-style-singleton", [\
       ["npm:2.2.1", {\
         "packageLocation": "../../../.yarn/berry/cache/react-style-singleton-npm-2.2.1-e45b97b153-10c0.zip/node_modules/react-style-singleton/",\
@@ -17787,6 +17893,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/requires-port-npm-1.0.0-fd036b488a-10c0.zip/node_modules/requires-port/",\
         "packageDependencies": [\
           ["requires-port", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["resize-observer-polyfill", [\
+      ["npm:1.5.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/resize-observer-polyfill-npm-1.5.1-603120e8a0-10c0.zip/node_modules/resize-observer-polyfill/",\
+        "packageDependencies": [\
+          ["resize-observer-polyfill", "npm:1.5.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -18307,6 +18422,28 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["slick-carousel", [\
+      ["npm:1.8.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/slick-carousel-npm-1.8.1-8382d373c2-10c0.zip/node_modules/slick-carousel/",\
+        "packageDependencies": [\
+          ["slick-carousel", "npm:1.8.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:1.8.1", {\
+        "packageLocation": "./.yarn/__virtual__/slick-carousel-virtual-ae5de9f3b5/4/.yarn/berry/cache/slick-carousel-npm-1.8.1-8382d373c2-10c0.zip/node_modules/slick-carousel/",\
+        "packageDependencies": [\
+          ["slick-carousel", "virtual:f4c248e6792f134516cca324ce1d3a74f86945f9eb01f044ac7d8c63e31a693a929c1bcac4a76ddeffc1b7242d12101f2a9c86b533e6ffe77cb8b631b1fa9900#npm:1.8.1"],\
+          ["@types/jquery", null],\
+          ["jquery", null]\
+        ],\
+        "packagePeers": [\
+          "@types/jquery",\
+          "jquery"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["smart-buffer", [\
       ["npm:4.2.0", {\
         "packageLocation": "../../../.yarn/berry/cache/smart-buffer-npm-4.2.0-5ac3f668bb-10c0.zip/node_modules/smart-buffer/",\
@@ -18588,6 +18725,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/streamsearch-npm-1.1.0-fc3ad6536d-10c0.zip/node_modules/streamsearch/",\
         "packageDependencies": [\
           ["streamsearch", "npm:1.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["string-convert", [\
+      ["npm:0.2.1", {\
+        "packageLocation": "../../../.yarn/berry/cache/string-convert-npm-0.2.1-f1a42cb9ea-10c0.zip/node_modules/string-convert/",\
+        "packageDependencies": [\
+          ["string-convert", "npm:0.2.1"]\
         ],\
         "linkType": "HARD"\
       }]\
