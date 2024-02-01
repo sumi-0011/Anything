@@ -1,22 +1,27 @@
 import styled from "@emotion/styled";
 import { Children, ComponentProps, PropsWithChildren, useState } from "react";
 
+import Stepper from "@/components/Slider/_Stepper";
 import SvgArrowLeft from "@/components/Slider/ArrowLeft";
 import SvgArrowRight from "@/components/Slider/ArrowRight";
 
+/**
+ * @description 한 slide씩 넘어가는 슬라이더입니다.
+ * @param {ResponsiveSizeType} sliderSize - slider의 너비
+ * @param {number} [slidesToShow = 4] - 한 화면에 보이는 slider 개수
+ * @param {ResponsiveSizeType} [gap] - slider 사이 gap
+ */
 type SliderType = {
   slidesToShow: number;
   sliderSize: number;
   gap?: number;
   stepperGap?: number;
   blur?: boolean;
-
   isStepper?: boolean;
 };
 
 type SliderStyleType = SliderType & { page: number; totalPage: number };
 
-// blur false 인 경우 수정
 function SingleSlider({
   children,
   slidesToShow,
@@ -61,15 +66,11 @@ function SingleSlider({
       {!isLastPage && blur && <RightBlur />}
 
       {isStepper && (
-        <StepperWrapper>
-          {[...Array(totalPageCount)].map((_, idx) =>
-            idx === page ? (
-              <ActiveStepper key={`stepper-active-${idx}`} />
-            ) : (
-              <Stepper onClick={() => setPage(idx)} key={`stepper-${idx}`} />
-            ),
-          )}
-        </StepperWrapper>
+        <Stepper
+          totalPageCount={totalPageCount}
+          currentPage={page}
+          setPage={setPage}
+        />
       )}
     </Container>
   );
@@ -87,7 +88,6 @@ const Container = styled.div<SliderStyleType>`
     stepperGap = 16,
     gap = 16,
   }) => {
-    /* const padding = gap; */
     // 레이아웃에 배치되는 영역
     let viewBoxWidth = sliderSize * slidesToShow + gap * (slidesToShow - 1);
     if (blur) viewBoxWidth += sliderSize / 2;
@@ -213,36 +213,6 @@ const ArrowContainer = styled.div`
 const NextArrowContainer = styled(ArrowContainer)``;
 const PrevArrowContainer = styled(ArrowContainer)``;
 
-const StepperWrapper = styled.div`
-  position: absolute;
-  bottom: 0px;
-
-  display: flex;
-  gap: 4px;
-  justify-content: center;
-  margin: auto;
-  left: 0;
-  right: 0;
-`;
-
-const Stepper = styled.div`
-  width: 6px;
-  height: 6px;
-  border-radius: 100px;
-
-  background-color: lightslategray;
-  cursor: pointer;
-`;
-
-const ActiveStepper = styled.div`
-  width: 12px;
-  height: 6px;
-  border-radius: 100px;
-
-  background-color: gray;
-  cursor: pointer;
-`;
-
 const Blur = styled.div`
   position: absolute;
   margin: auto;
@@ -251,6 +221,7 @@ const Blur = styled.div`
   height: 100%;
   /* height: 150px; */
 `;
+
 const LeftBlur = styled(Blur)`
   left: -16px;
   background: linear-gradient(270deg, rgba(255, 255, 255, 0) 18.45%, #fff 100%);
