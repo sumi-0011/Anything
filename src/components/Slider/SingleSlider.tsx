@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
-import { Children, ComponentProps, PropsWithChildren, useState } from "react";
+import { Children, PropsWithChildren, useState } from "react";
 
-import Stepper from "@/components/Slider/_Stepper";
-import SvgArrowLeft from "@/components/Slider/ArrowLeft";
-import SvgArrowRight from "@/components/Slider/ArrowRight";
+import PrevArrow from "@/components/Slider/Slider.components/_ArrowLeft";
+import NextArrow from "@/components/Slider/Slider.components/_ArrowRight";
+import Stepper from "@/components/Slider/Slider.components/_Stepper";
 
 /**
  * @description 한 slide씩 넘어가는 슬라이더입니다.
@@ -117,12 +117,12 @@ const Container = styled.div<SliderStyleType>`
           width: ${sliderSize}px;
         }
       }
-      ${NextArrowContainer} {
+     .slider-next-arrow{
         right: -${gap}px;
         bottom: ${stepperGap ?? 0}px;
 
       }
-      ${PrevArrowContainer} {
+     .slider-prev-arrow {
         left: -${gap}px;
         bottom: ${stepperGap ?? 0}px;
       }
@@ -170,48 +170,6 @@ const SliderInner = styled.div<{ page: number }>`
     flex-shrink: 0;
   }
 `;
-
-function NextArrow(props: ComponentProps<"div">) {
-  const { onClick } = props;
-  return (
-    <NextArrowContainer onClick={onClick}>
-      <SvgArrowRight width={16} height={16} color="#808080" />
-    </NextArrowContainer>
-  );
-}
-
-function PrevArrow(props: ComponentProps<"div">) {
-  const { onClick } = props;
-  return (
-    <PrevArrowContainer onClick={onClick}>
-      <SvgArrowLeft width={16} height={16} color="#808080" />
-    </PrevArrowContainer>
-  );
-}
-
-const ArrowContainer = styled.div`
-  position: absolute;
-  margin: auto;
-  top: 0;
-
-  display: flex;
-  width: 32px;
-  height: 32px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 32px;
-  overflow: visible;
-
-  border: 1px solid gray;
-  background-color: #fff;
-  box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.04);
-
-  cursor: pointer;
-  z-index: 1;
-`;
-
-const NextArrowContainer = styled(ArrowContainer)``;
-const PrevArrowContainer = styled(ArrowContainer)``;
 
 const Blur = styled.div`
   position: absolute;
