@@ -4,6 +4,8 @@ import SingleSlider from "@/components/Slider/SingleSlider";
 import { theme } from "@/styles/theme";
 
 function SliderPage() {
+  const InnerData = [1, 2, 3, 4, 5].map((item) => <Box key={item}>{item}</Box>);
+
   return (
     <Container>
       <section>
@@ -14,25 +16,19 @@ function SliderPage() {
           blur={false}
           isStepper={false}
         >
-          {[1, 2, 3, 4, 5].map((item) => (
-            <Box key={item}>{item}</Box>
-          ))}
+          {InnerData}
         </SingleSlider>
       </section>
       <section>
         <Heading>single slider (blur true, stepper false)</Heading>
         <SingleSlider sliderSize={300} slidesToShow={2} isStepper={false}>
-          {[1, 2, 3, 4, 5].map((item) => (
-            <Box key={item}>{item}</Box>
-          ))}
+          {InnerData}
         </SingleSlider>
       </section>
       <section>
-        <Heading>single slider (stepper true)</Heading>{" "}
+        <Heading>single slider (stepper true)</Heading>
         <SingleSlider sliderSize={300} slidesToShow={2} blur={false}>
-          {[1, 2, 3, 4, 5].map((item) => (
-            <Box key={item}>{item}</Box>
-          ))}
+          {InnerData}
         </SingleSlider>
       </section>
     </Container>

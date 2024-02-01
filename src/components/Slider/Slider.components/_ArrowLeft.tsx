@@ -1,4 +1,4 @@
-import styled from "@emotion/styled/macro";
+import styled from "@emotion/styled";
 import { ComponentProps, SVGProps } from "react";
 
 import { ArrowContainer } from "@/components/Slider/Slider.styles";

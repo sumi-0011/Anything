@@ -12,11 +12,18 @@ import Stepper from "@/components/Slider/Slider.components/_Stepper";
  * @param {ResponsiveSizeType} [gap] - slider 사이 gap
  */
 type SliderType = {
+  // slider logic
   slidesToShow: number;
   sliderSize: number;
+
+  // slider style
   gap?: number;
-  stepperGap?: number;
+
+  // blur
   blur?: boolean;
+
+  // stepper
+  stepperGap?: number;
   isStepper?: boolean;
 };
 
