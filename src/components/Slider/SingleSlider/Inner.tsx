@@ -1,9 +1,17 @@
 import styled from "@emotion/styled";
-import { Children, PropsWithChildren, useState } from "react";
+import {
+  Children,
+  PropsWithChildren,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import React from "react";
 
 import PrevArrow from "@/components/Slider/Slider.components/_ArrowLeft";
 import NextArrow from "@/components/Slider/Slider.components/_ArrowRight";
-import Stepper from "@/components/Slider/Slider.components/_Stepper";
+import { useSliderContext } from "@/components/Slider/Slider.context";
 
 /**
  * @description 한 slide씩 넘어가는 슬라이더입니다.
@@ -14,7 +22,7 @@ import Stepper from "@/components/Slider/Slider.components/_Stepper";
 type SliderType = {
   // slider logic
   slidesToShow: number;
-  sliderSize: number;
+  // sliderSize: number;
 
   // slider style
   gap?: number;
@@ -29,31 +37,32 @@ type SliderType = {
 
 type SliderStyleType = SliderType & { page: number; totalPage: number };
 
-function SingleSlider({
-  children,
+function SingleSliderInner({
+  children: _children,
   slidesToShow,
   blur = true,
-  isStepper = true,
+  // isStepper = true,
   ...props
 }: PropsWithChildren<SliderType>) {
-  const [page, setPage] = useState(0);
+  const { page } = useSliderContext();
+  const { children, sliderSize } = useGetChildElementWidth(_children);
 
-  const cardCount = Children.count(children);
+  const cardCount = Children.count(_children);
   const totalPageCount =
     cardCount === slidesToShow ? 1 : cardCount - (slidesToShow - 2);
 
-  const isFirstPage = page === 0;
-  const isLastPage = page === totalPageCount - 1;
+  // const isFirstPage = page === 0;
+  // const isLastPage = page === totalPageCount - 1;
 
-  const onNext = () => {
-    if (isLastPage) return;
-    setPage((prev) => prev + 1);
-  };
+  // const onNext = () => {
+  //   if (isLastPage) return;
+  //   setPage((prev) => prev + 1);
+  // };
 
-  const onPrev = () => {
-    if (isFirstPage) return;
-    setPage((prev) => prev - 1);
-  };
+  // const onPrev = () => {
+  //   if (isFirstPage) return;
+  //   setPage((prev) => prev - 1);
+  // };
 
   return (
     <Container
@@ -61,31 +70,59 @@ function SingleSlider({
       page={page}
       totalPage={totalPageCount}
       blur={blur}
+      sliderSize={sliderSize}
       {...props}
     >
       <Slider>
         <SliderInner page={page}>{children}</SliderInner>
       </Slider>
 
-      {!isFirstPage && <PrevArrow onClick={onPrev} />}
+      {/* {!isFirstPage && <PrevArrow onClick={onPrev} />}
       {!isFirstPage && blur && <LeftBlur />}
       {!isLastPage && <NextArrow onClick={onNext} />}
-      {!isLastPage && blur && <RightBlur />}
+      {!isLastPage && blur && <RightBlur />} */}
 
-      {isStepper && (
+      {/* {isStepper && (
         <Stepper
           totalPageCount={totalPageCount}
           currentPage={page}
           setPage={setPage}
         />
-      )}
+      )} */}
     </Container>
   );
 }
 
-export default SingleSlider;
+export default SingleSliderInner;
 
-const Container = styled.div<SliderStyleType>`
+const useGetChildElementWidth = (children: ReactNode) => {
+  const childRef = useRef<HTMLDivElement>();
+  const [sliderSize, setSliderSize] = useState(0);
+
+  // 컴포넌트가 마운트된 후에 width를 계산합니다.
+  useEffect(() => {
+    if (childRef.current) {
+      const width = childRef.current.offsetWidth;
+      setSliderSize(width);
+    }
+  }, []);
+
+  // 첫 번째 자식 요소에만 ref를 부여합니다.
+  const childrenWithRef = React.Children.map(children, (child, index) => {
+    if (index === 0) {
+      return React.cloneElement(
+        <div style={{ width: "fit-content" }}>{child}</div>,
+        { ref: childRef },
+      );
+    } else {
+      return child;
+    }
+  });
+
+  return { children: childrenWithRef, sliderSize };
+};
+
+const Container = styled.div<SliderStyleType & { sliderSize: number }>`
   ${({
     page,
     slidesToShow,

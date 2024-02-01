@@ -10,27 +10,22 @@ function SliderPage() {
     <Container>
       <section>
         <Heading>single slider (blur false, stepper false)</Heading>
-        <SingleSlider
-          sliderSize={300}
-          slidesToShow={2}
-          blur={false}
-          isStepper={false}
-        >
-          {InnerData}
+        <SingleSlider sliderSize={300} slidesToShow={2}>
+          <SingleSlider.Inner slidesToShow={2}>{InnerData}</SingleSlider.Inner>
         </SingleSlider>
       </section>
-      <section>
+      {/* <section>
         <Heading>single slider (blur true, stepper false)</Heading>
-        <SingleSlider sliderSize={300} slidesToShow={2} isStepper={false}>
+        <SingleSlider sliderSize={300} slidesToShow={2}>
           {InnerData}
         </SingleSlider>
       </section>
       <section>
         <Heading>single slider (stepper true)</Heading>
-        <SingleSlider sliderSize={300} slidesToShow={2} blur={false}>
+        <SingleSlider sliderSize={300} slidesToShow={2}>
           {InnerData}
         </SingleSlider>
-      </section>
+      </section> */}
     </Container>
   );
 }
