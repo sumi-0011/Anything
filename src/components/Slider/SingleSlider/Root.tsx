@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { Children, PropsWithChildren, useState } from "react";
 
 import { SliderContext } from "@/components/Slider/Slider.context";
@@ -23,9 +24,15 @@ function SingleSliderRoot(props: PropsWithChildren<RootProps>) {
 
   return (
     <SliderContext.Provider value={sliderValue}>
-      {props.children}
+      <Wrapper>{props.children}</Wrapper>
     </SliderContext.Provider>
   );
 }
 
 export default SingleSliderRoot;
+
+const Wrapper = styled.div`
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+`;

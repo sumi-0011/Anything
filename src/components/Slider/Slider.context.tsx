@@ -1,9 +1,9 @@
-import { createContext, useContext } from "react";
+import { createContext, Dispatch, SetStateAction, useContext } from "react";
 
 interface SliderState {
   page: number;
   totalPageCount: number;
-  setPage: (page: number) => void;
+  setPage: Dispatch<SetStateAction<number>>;
 
   slidesToShow: number;
 }

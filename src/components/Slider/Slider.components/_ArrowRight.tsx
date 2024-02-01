@@ -1,7 +1,54 @@
 import styled from "@emotion/styled";
-import { ComponentProps, SVGProps } from "react";
+import { SVGProps } from "react";
 
+import { useSliderContext } from "@/components/Slider/Slider.context";
 import { ArrowContainer } from "@/components/Slider/Slider.styles";
+
+function NextArrow() {
+  const { page, totalPageCount, setPage } = useSliderContext();
+  const isLastPage = page === totalPageCount - 1;
+
+  const onNext = () => {
+    if (isLastPage) return;
+    setPage((prev) => prev + 1);
+  };
+
+  if (isLastPage) return <></>;
+
+  return (
+    <NextArrowContainer onClick={onNext} className="slider-next-arrow">
+      <ArrowWrapper>
+        <SvgArrowRight width={16} height={16} color="#808080" />
+      </ArrowWrapper>
+    </NextArrowContainer>
+  );
+}
+
+const NextArrowContainer = styled(ArrowContainer)`
+  right: 0;
+`;
+
+const ArrowWrapper = styled.div`
+  position: relative;
+  left: 50%;
+
+  display: flex;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  overflow: visible;
+
+  border: 1px solid gray;
+  background-color: #fff;
+  box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.04);
+
+  cursor: pointer;
+  z-index: 1;
+`;
+
+export default NextArrow;
 
 const SvgArrowRight = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -20,17 +67,3 @@ const SvgArrowRight = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-
-function NextArrow(props: ComponentProps<"div">) {
-  const { onClick } = props;
-
-  return (
-    <NextArrowContainer onClick={onClick} className="slider-next-arrow">
-      <SvgArrowRight width={16} height={16} color="#808080" />
-    </NextArrowContainer>
-  );
-}
-
-const NextArrowContainer = styled(ArrowContainer)``;
-
-export default NextArrow;

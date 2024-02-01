@@ -11,7 +11,9 @@ function SliderPage() {
       <section>
         <Heading>single slider (blur false, stepper false)</Heading>
         <SingleSlider sliderSize={300} slidesToShow={2}>
-          <SingleSlider.Inner slidesToShow={2}>{InnerData}</SingleSlider.Inner>
+          <SingleSlider.Inner>{InnerData}</SingleSlider.Inner>
+          <SingleSlider.PrevArrow />
+          <SingleSlider.NextArrow />
         </SingleSlider>
       </section>
       {/* <section>

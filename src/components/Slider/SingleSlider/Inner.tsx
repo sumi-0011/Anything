@@ -9,8 +9,6 @@ import {
 } from "react";
 import React from "react";
 
-import PrevArrow from "@/components/Slider/Slider.components/_ArrowLeft";
-import NextArrow from "@/components/Slider/Slider.components/_ArrowRight";
 import { useSliderContext } from "@/components/Slider/Slider.context";
 
 /**
@@ -20,10 +18,6 @@ import { useSliderContext } from "@/components/Slider/Slider.context";
  * @param {ResponsiveSizeType} [gap] - slider 사이 gap
  */
 type SliderType = {
-  // slider logic
-  slidesToShow: number;
-  // sliderSize: number;
-
   // slider style
   gap?: number;
 
@@ -39,30 +33,16 @@ type SliderStyleType = SliderType & { page: number; totalPage: number };
 
 function SingleSliderInner({
   children: _children,
-  slidesToShow,
   blur = true,
   // isStepper = true,
   ...props
 }: PropsWithChildren<SliderType>) {
-  const { page } = useSliderContext();
+  const { page, slidesToShow } = useSliderContext();
   const { children, sliderSize } = useGetChildElementWidth(_children);
 
   const cardCount = Children.count(_children);
   const totalPageCount =
     cardCount === slidesToShow ? 1 : cardCount - (slidesToShow - 2);
-
-  // const isFirstPage = page === 0;
-  // const isLastPage = page === totalPageCount - 1;
-
-  // const onNext = () => {
-  //   if (isLastPage) return;
-  //   setPage((prev) => prev + 1);
-  // };
-
-  // const onPrev = () => {
-  //   if (isFirstPage) return;
-  //   setPage((prev) => prev - 1);
-  // };
 
   return (
     <Container
@@ -122,7 +102,9 @@ const useGetChildElementWidth = (children: ReactNode) => {
   return { children: childrenWithRef, sliderSize };
 };
 
-const Container = styled.div<SliderStyleType & { sliderSize: number }>`
+const Container = styled.div<
+  SliderStyleType & { sliderSize: number; slidesToShow: number }
+>`
   ${({
     page,
     slidesToShow,
