@@ -23,3 +23,5 @@ export const darkTheme = {
   colors: darkThemeColors,
   zIndex,
 };
+// TODO : 수정 필요
+export const theme = darkTheme;
