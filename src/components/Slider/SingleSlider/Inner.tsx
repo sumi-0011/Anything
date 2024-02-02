@@ -5,7 +5,6 @@ import {
   ReactNode,
   useEffect,
   useRef,
-  useState,
 } from "react";
 import React from "react";
 
@@ -50,25 +49,12 @@ function SingleSliderInner({
       page={page}
       totalPage={totalPageCount}
       blur={blur}
-      sliderSize={sliderSize}
+      sliderSize={sliderSize[0]}
       {...props}
     >
       <Slider>
         <SliderInner page={page}>{children}</SliderInner>
       </Slider>
-
-      {/* {!isFirstPage && <PrevArrow onClick={onPrev} />}
-      {!isFirstPage && blur && <LeftBlur />}
-      {!isLastPage && <NextArrow onClick={onNext} />}
-      {!isLastPage && blur && <RightBlur />} */}
-
-      {/* {isStepper && (
-        <Stepper
-          totalPageCount={totalPageCount}
-          currentPage={page}
-          setPage={setPage}
-        />
-      )} */}
     </Container>
   );
 }
@@ -77,13 +63,14 @@ export default SingleSliderInner;
 
 const useGetChildElementWidth = (children: ReactNode) => {
   const childRef = useRef<HTMLDivElement>();
-  const [sliderSize, setSliderSize] = useState(0);
+  const { elementSize, setElementSize } = useSliderContext();
 
   // 컴포넌트가 마운트된 후에 width를 계산합니다.
   useEffect(() => {
     if (childRef.current) {
       const width = childRef.current.offsetWidth;
-      setSliderSize(width);
+      const height = childRef.current.offsetHeight;
+      setElementSize([width, height]);
     }
   }, []);
 
@@ -99,7 +86,7 @@ const useGetChildElementWidth = (children: ReactNode) => {
     }
   });
 
-  return { children: childrenWithRef, sliderSize };
+  return { children: childrenWithRef, sliderSize: elementSize };
 };
 
 const Container = styled.div<
@@ -195,23 +182,4 @@ const SliderInner = styled.div<{ page: number }>`
   & > * {
     flex-shrink: 0;
   }
-`;
-
-const Blur = styled.div`
-  position: absolute;
-  margin: auto;
-  top: 0;
-  width: 84px;
-  height: 100%;
-  /* height: 150px; */
-`;
-
-const LeftBlur = styled(Blur)`
-  left: -16px;
-  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 18.45%, #fff 100%);
-`;
-
-const RightBlur = styled(Blur)`
-  right: -16px;
-  background: linear-gradient(270deg, #fff 18.45%, rgba(255, 255, 255, 0) 100%);
 `;

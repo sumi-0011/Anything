@@ -10,7 +10,7 @@ function SliderPage() {
     <Container>
       <section>
         <Heading>single slider (blur false, stepper false)</Heading>
-        <SingleSlider sliderSize={300} slidesToShow={2}>
+        <SingleSlider sliderSize={300} slidesToShow={2} isBlur>
           <SingleSlider.Inner>{InnerData}</SingleSlider.Inner>
           <SingleSlider.PrevArrow />
           <SingleSlider.NextArrow />

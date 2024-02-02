@@ -6,6 +6,15 @@ interface SliderState {
   setPage: Dispatch<SetStateAction<number>>;
 
   slidesToShow: number;
+
+  isBlur?: boolean;
+  stepperGap: number;
+
+  // element
+  setElementSize: Dispatch<SetStateAction<[number, number]>>;
+  // @param {number} [0] - width of element
+  // @param {number} [1] - height of element
+  elementSize: [number, number];
 }
 
 export const SliderContext = createContext<SliderState | null>(null);
