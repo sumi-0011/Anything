@@ -20,9 +20,6 @@ type SliderType = {
   // slider style
   gap?: number;
 
-  // blur
-  blur?: boolean;
-
   // stepper
   stepperGap?: number;
   isStepper?: boolean;
@@ -32,11 +29,9 @@ type SliderStyleType = SliderType & { page: number; totalPage: number };
 
 function SingleSliderInner({
   children: _children,
-  blur = true,
-  // isStepper = true,
   ...props
 }: PropsWithChildren<SliderType>) {
-  const { page, slidesToShow } = useSliderContext();
+  const { page, slidesToShow, isBlur } = useSliderContext();
   const { children, sliderSize } = useGetChildElementWidth(_children);
 
   const cardCount = Children.count(_children);
@@ -48,7 +43,7 @@ function SingleSliderInner({
       slidesToShow={slidesToShow}
       page={page}
       totalPage={totalPageCount}
-      blur={blur}
+      blur={isBlur}
       sliderSize={sliderSize[0]}
       {...props}
     >
@@ -90,7 +85,7 @@ const useGetChildElementWidth = (children: ReactNode) => {
 };
 
 const Container = styled.div<
-  SliderStyleType & { sliderSize: number; slidesToShow: number }
+  SliderStyleType & { sliderSize: number; slidesToShow: number; blur?: boolean }
 >`
   ${({
     page,
