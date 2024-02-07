@@ -10,10 +10,10 @@ function SliderPage() {
 
   return (
     <Container>
-      <section>
-        <Heading>full slider (blur false, stepper false)</Heading>
+      <Heading>Slider</Heading>
+      <Section>
         <MobileSlider>{InnerData}</MobileSlider>
-      </section>
+      </Section>
     </Container>
   );
 }
@@ -22,12 +22,23 @@ export default SliderPage;
 
 const Container = styled.div`
   padding: 100px;
+  @media screen and (max-width: 768px) {
+    padding: 16px;
+  }
 `;
 
 const Heading = styled.h2`
   font-size: 30px;
   margin-bottom: 10px;
   margin-top: 20px;
+`;
+
+const Section = styled.section`
+  width: 500px;
+
+  @media screen and (max-width: 768px) {
+    width: 80vw;
+  }
 `;
 
 const Box = styled.div`
@@ -40,4 +51,11 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  border-radius: 10px;
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
+    height: 150px;
+  }
 `;
