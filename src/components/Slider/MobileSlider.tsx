@@ -17,13 +17,15 @@ function MobileSlider(props: PropsWithChildren) {
   );
 }
 
-const useScrollDrag = (): {
+interface ScrollDragReturns {
   ref: React.RefObject<HTMLDivElement>;
   onMouseDown: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   onMouseUp: () => void;
   onMouseMove: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   onMouseLeave: () => void;
-} => {
+}
+
+const useScrollDrag = (): ScrollDragReturns => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const [isDrag, setIsDrag] = useState(false);
