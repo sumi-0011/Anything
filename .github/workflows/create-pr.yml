@@ -14,4 +14,3 @@ jobs:
         head: ${{ github.ref }}
         base: main
         title: ${{ github.event.head_commit.message }}
-출처: https://artieee.tistory.com/50 [감자밭 개발자:티스토리]
