@@ -1,0 +1,26 @@
+# commit에 PR이라는 단어가 포함되어 있을 경우에만 PR을 생성하도록 설정
+# 이미 PR을 생성한 경우에는 다시 PR을 생성하지 않도록 되어있음
+# PR이 이미 생성되어있는 경우에, 새로운 commit을 push하면, 기존 PR의 내용애 commit 기록이 추가되도록 설정
+name: "Update PR"
+on: push
+jobs:
+  update_pr:
+    if: ${{ (contains(github.event.head_commit.message, 'UPDATE') || contains(github.event.head_commit.message, 'update'))}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update PR"
+          title: "Update PR"
+          body: "Update PR"
+          branch: "main"
+          base: "main"
+          branch-suffix: "update-pr"
+          labels: "auto-update"
+          assignees: "jungin500"
+          reviewers: "jungin500"
+          changes: "Update PR"
