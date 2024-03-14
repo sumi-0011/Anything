@@ -1,7 +1,6 @@
-import { describe, expect, it, test } from "@jest/globals";
-import { render, screen } from "@testing-library/react";
-
 const sum = (a: number, b: number): number => a + b;
+
+import { render, screen } from "@testing-library/react";
 
 test("adds 1 + 2 to equal 3", () => {
   expect(sum(1, 2)).toBe(3);

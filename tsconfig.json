@@ -16,7 +16,7 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","jest.setup.js", "@types/emotion.d.ts",],
   "exclude": ["node_modules"]
