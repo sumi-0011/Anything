@@ -14,8 +14,14 @@ function useGetDomVerticalPosition(): ReturnProps {
     if (!ref.current) return null;
 
     const windowHeight = window.innerHeight;
+    console.log("windowHeight: ", windowHeight);
 
     const position = ref.current.getBoundingClientRect().top;
+    console.log(
+      "ref.current.getBoundingClientRect(): ",
+      ref.current.getBoundingClientRect(),
+    );
+    console.log("position: ", position);
 
     if (position < windowHeight / 2) return "top";
     return "bottom";
